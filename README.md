@@ -1,3 +1,5 @@
+More details can be found in the project summary pdf file.
+
 iPython Notebooks:
   - color_plot: uses Y3 reserved stars catalog to generate plots of residuals by band
   - psf_plot: applying size/shape measurements to y1_test, measurement/residual distribution plots
