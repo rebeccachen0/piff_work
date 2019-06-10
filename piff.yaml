@@ -1,0 +1,59 @@
+modules:
+    - galsim_extra
+
+input:
+
+    #dir: '/astro/u/mjarvis/work/y3_piff/y3a1-v01/226650'
+    image_file_name: 'D00226650_z_c13_r2355p02_immasked.fits'
+    image_hdu: 0
+    badpix_hdu: 1
+    weight_hdu: 2
+
+    cat_file_name: 'D00226650_z_c13_r2355p02_stars.fits'
+    cat_hdu: 1
+
+    x_col: x
+    y_col: y
+    sky_col: sky
+    ra: ra
+    dec: dec
+    gain: 1.0
+
+    max_snr: 100
+    min_snr: 20
+
+    stamp_size: 25
+
+    # wcs:
+    #     type: Pixmappy
+    #     dir: '/astro/u/mjarvis/rmjarvis/DESWL/psf/'
+    #     file_name: 'zone029.astro.orig'
+    #     exp: 226650
+    #     ccdnum: 13
+        #default_color: 0
+
+output:
+    #dir: '/astro/u/mjarvis/work/y3_piff/y3a1-v01/226650'
+    file_name: 'D00226650_z_c13_r2355p02_piff.fits'
+
+psf:
+
+    model:
+        type: PixelGrid
+        scale: 0.30
+        size: 17
+        #interp: Lanczos(5)
+        start_sigma: 0.8  # The code is pretty robust to this being larger than the actual size
+                          # of the PSF, but if it's much smaller, then there can be problems.
+
+    interp:
+        type: BasisPolynomial
+        #type: Polynomial
+        order: 3
+
+    outliers:
+        type: Chisq
+        nsigma: 4
+        max_remove: 0.01
+
+verbose: 2
