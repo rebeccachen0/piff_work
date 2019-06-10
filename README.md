@@ -1,8 +1,5 @@
 iPython Notebooks:
   - color_plot: uses Y3 reserved stars catalog to generate plots of residuals by band
-  - gaia: first attempts with matching y1_test data with Gaia, magnitude distribution plot
-  - gaia_y3: matching with Y3 reserved stars
-  - piff_DC2: started looking at output of running Mike's DC2 piff yaml
   - psf_plot: applying size/shape measurements to y1_test, measurement/residual distribution plots
   - y3_gaia_plotting_clean.ipynb: uses code from Mike's run_piff script to compare size/shape measurements using only Gaia matched stars
   - split_catalog.ipynb: for one exposure, does Gaia matching, writes out one catalog file per chip with x, y, ra, dec, sky, mag columns.
